@@ -2,10 +2,10 @@
 # PictureApp Uygulaması
 
 ## Giriş
-Proje kapsamında; FireBase servisinin kütüphaneleri kullanılarak bir fotoğraf paylaşım uygulaması tasarlanmıştır. 
+Proje kapsamında; FireBase servisinin kütüphaneleri kullanılarak bir fotoğraf paylaşım uygulaması MVVM tasarım kalıbı ile tasarlanmıştır. 
 
 ## Hedef
-Proje ile birlikte; FireBase servisleri kullanılarak kullanıcı kayıt, kullanıcı girişi, fotoğraf ve yorumdan oluşan kullanıcı iletilerinin web tabanlı kayıt edilmesi ve kullanıcıya bir arayüz ile sunulması işlemlerinin nasıl tasarlanacağının ortaya konulması amaçlanmıştır. 
+Proje ile birlikte; FireBase servisleri kullanılarak kullanıcı kayıt, kullanıcı girişi, fotoğraf ve yorumdan oluşan kullanıcı iletilerinin web tabanlı kayıt edilmesi ve kullanıcıya bir arayüz ile sunulması işlemlerinin MVVM tasarım kalıbı ile nasıl tasarlanacağının ortaya konulması amaçlanmıştır. 
 
 ## Uygulama Kullanımı
 Uygulama ilk olarak Firebase Authentication ile kullanıcı kaydı ve giriş işlemi ile başlamakta, uygulama içerisinden çıkış yapılmadığı sürece kullanıcı oturumu açık tutulmaktadır.
