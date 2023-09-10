@@ -17,7 +17,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     //FireStore dan veriler bir Obje olarak cekecegimiz icin Post dizisi olusturuyoruz
     var postArray = [Post]()
-
+    var feedTableViewModel : FeedTableViewModel?
     
 
     
@@ -30,7 +30,7 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         //Yukleme aninda verileri FireStore dan cekiyoruz
         fetchFromFirebase()
-
+                
 
     }
     
@@ -67,12 +67,19 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
                                     let post = Post(email: email, comment: comment, imageUrl: imageUrl)
                                     
                                     self.postArray.append(post)
-                                  
+                                    
                                 }
                             }
 
                         }
                           
+                    }
+                    
+                    self.feedTableViewModel = FeedTableViewModel(postList: self.postArray)
+                    
+                    
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
                     }
                      
                 }
@@ -83,23 +90,24 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return postArray.count
+        return self.feedTableViewModel?.postList == nil ? 0 : feedTableViewModel?.postList.count as! Int
         
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-   
-        
         let feedCell : FeedTableViewCell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath) as! FeedTableViewCell
-
-        feedCell.emailFeed.text = postArray[indexPath.row].email
-        feedCell.commentFeed.text = postArray[indexPath.row].comment
         
-        //Asenkron veri cektigimiz icin SDWebImage methotlarini kullaniyoruz
-        feedCell.imageFeed.sd_setImage(with: URL(string : postArray[indexPath.row].imageUrl))
+        let postArray = self.feedTableViewModel?.cellForRowAt(index: indexPath.row)
 
+        feedCell.emailFeed.text = postArray?.email
+        feedCell.commentFeed.text = postArray?.comment
+        
+        if let imageUrl = postArray?.imageUrl as? String {
+            //Asenkron veri cektigimiz icin SDWebImage methotlarini kullaniyoruz
+            feedCell.imageFeed.sd_setImage(with: URL(string : imageUrl))
+        }
         return feedCell
     }
     

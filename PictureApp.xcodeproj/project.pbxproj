@@ -23,6 +23,7 @@
 		06A22D9B2A9CA74200EF1AA1 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 06A22D9A2A9CA74200EF1AA1 /* FirebaseAuth */; };
 		06A22D9D2A9CA74200EF1AA1 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 06A22D9C2A9CA74200EF1AA1 /* FirebaseFirestore */; };
 		06A22D9F2A9CA74200EF1AA1 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 06A22D9E2A9CA74200EF1AA1 /* FirebaseStorage */; };
+		06BD8FC72AADCEE800B99FED /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BD8FC62AADCEE800B99FED /* FeedViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		06A22D8E2A9CA65B00EF1AA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06A22D912A9CA65B00EF1AA1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		06A22D932A9CA65B00EF1AA1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06BD8FC62AADCEE800B99FED /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +78,29 @@
 		06A22D842A9CA65A00EF1AA1 /* PictureApp */ = {
 			isa = PBXGroup;
 			children = (
+				06BD8FC52AADCE8C00B99FED /* ViewModel */,
+				06BD8FC42AADCE6E00B99FED /* View */,
+				06BD8FC32AADCE2100B99FED /* Model */,
+				06A22D8B2A9CA65A00EF1AA1 /* Main.storyboard */,
+				06A22D8E2A9CA65B00EF1AA1 /* Assets.xcassets */,
+				06A22D902A9CA65B00EF1AA1 /* LaunchScreen.storyboard */,
+				06A22D932A9CA65B00EF1AA1 /* Info.plist */,
+				068325372A9CB82400520282 /* GoogleService-Info.plist */,
+			);
+			path = PictureApp;
+			sourceTree = "<group>";
+		};
+		06BD8FC32AADCE2100B99FED /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0676B2EE2A9FA5DD00A40094 /* Post.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		06BD8FC42AADCE6E00B99FED /* View */ = {
+			isa = PBXGroup;
+			children = (
 				06A22D852A9CA65A00EF1AA1 /* AppDelegate.swift */,
 				06A22D872A9CA65A00EF1AA1 /* SceneDelegate.swift */,
 				06A22D892A9CA65A00EF1AA1 /* ViewController.swift */,
@@ -83,14 +108,16 @@
 				068884482A9DCF9E00B45DF8 /* UploadViewController.swift */,
 				0688844A2A9DCFB000B45DF8 /* SettingsViewController.swift */,
 				06890E272A9F8E01002F44FF /* FeedTableViewCell.swift */,
-				06A22D8B2A9CA65A00EF1AA1 /* Main.storyboard */,
-				06A22D8E2A9CA65B00EF1AA1 /* Assets.xcassets */,
-				06A22D902A9CA65B00EF1AA1 /* LaunchScreen.storyboard */,
-				06A22D932A9CA65B00EF1AA1 /* Info.plist */,
-				068325372A9CB82400520282 /* GoogleService-Info.plist */,
-				0676B2EE2A9FA5DD00A40094 /* Post.swift */,
 			);
-			path = PictureApp;
+			path = View;
+			sourceTree = "<group>";
+		};
+		06BD8FC52AADCE8C00B99FED /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				06BD8FC62AADCEE800B99FED /* FeedViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +210,7 @@
 				068884472A9DCF7F00B45DF8 /* FeedViewController.swift in Sources */,
 				06A22D882A9CA65A00EF1AA1 /* SceneDelegate.swift in Sources */,
 				0688844B2A9DCFB000B45DF8 /* SettingsViewController.swift in Sources */,
+				06BD8FC72AADCEE800B99FED /* FeedViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
